@@ -1,5 +1,7 @@
 package com.mbdebian.codingtasks.models;
 
+import java.util.List;
+
 /**
  * @author Manuel Bernal Llinares
  *         Project: accession-service
@@ -12,4 +14,8 @@ package com.mbdebian.codingtasks.models;
  *         This is the main application model (we won't need more for covering the requirements)
  */
 public class AppModel {
+
+    public List<String> sortAndAggregate(List<String> accessions) {
+        // TODO
+    }
 }
