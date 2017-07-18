@@ -47,7 +47,8 @@ public class AppModel {
     }
 
     public List<String> sortAndAggregate(List<String> accessions) {
-        // TODO
-        return null;
+        Collapser collapser = new Collapser();
+        accessions.stream().sorted().forEach(accession -> collapser.build(accession));
+        return collapser.getProduct();
     }
 }
