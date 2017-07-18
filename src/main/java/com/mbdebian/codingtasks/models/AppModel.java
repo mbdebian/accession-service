@@ -17,5 +17,6 @@ public class AppModel {
 
     public List<String> sortAndAggregate(List<String> accessions) {
         // TODO
+        return null;
     }
 }
