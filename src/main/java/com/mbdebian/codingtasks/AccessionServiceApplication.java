@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.core.env.AbstractEnvironment;
 
+import java.util.Arrays;
+
 @SpringBootApplication
 public class AccessionServiceApplication implements CommandLineRunner {
 
@@ -15,8 +17,11 @@ public class AccessionServiceApplication implements CommandLineRunner {
     private AppModel appModel;
 
     @Override
-    public void run(String... strings) throws Exception {
-        // TODO
+    public void run(String... args) throws Exception {
+        // Print result on the standard output
+        System.out.println(
+                String.join(",", appModel.sortAndAggregate(Arrays.asList(args[0].split(","))))
+        );
     }
 
     public static void main(String[] args) {
