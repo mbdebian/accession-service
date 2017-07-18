@@ -18,6 +18,11 @@ import java.util.List;
 @Component
 public class AppModel {
 
+    // Helper class for collapsing consecutive accessions
+    class Collapser {
+        // TODO
+    }
+
     public List<String> sortAndAggregate(List<String> accessions) {
         // TODO
         return null;
