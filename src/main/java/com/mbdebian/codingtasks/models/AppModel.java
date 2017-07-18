@@ -29,6 +29,11 @@ public class AppModel {
             return false;
         }
 
+        private String collapseAdjacentAccessions(String accession) {
+            // TODO
+            return "";
+        }
+
         public void build(String accession) {
             // TODO
             // TODO is adjacent
