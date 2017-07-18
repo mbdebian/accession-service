@@ -24,8 +24,15 @@ public class AppModel {
         private List<String> collapsing = new ArrayList<>();
         private List<String> product = new ArrayList<>();
 
+        private boolean processAdjacency(String accession) {
+            // TODO
+            return false;
+        }
+
         public void build(String accession) {
             // TODO
+            // TODO is adjacent
+            // TODO collapse
         }
 
         public List<String> getProduct() {
