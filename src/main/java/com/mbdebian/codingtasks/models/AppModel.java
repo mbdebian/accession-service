@@ -57,7 +57,19 @@ public class AppModel {
             // If there is only one accession in the collapsing list, we just add it to the product, if not, we need to
             // collapse adjacent accessions
             String accessionToAdd = collapsing.get(0);
-            // TODO
+            if (collapsing.size() > 1) {
+                // Collapse using the first-last in the collapsing list
+                accessionToAdd = String.format("%s-%s",
+                        collapsing.get(0),
+                        collapsing.get(collapsing.size() - 1));
+            }
+            product.add(accessionToAdd);
+            collapsing.clear();
+            if (accession != null) {
+                // Add possible new accession after collapsing (corner case for the last accession that may just
+                // collapse)
+                collapsing.add(accession);
+            }
             // I'm not sure I will use this value for logging purposes...
             return accessionToAdd;
         }
