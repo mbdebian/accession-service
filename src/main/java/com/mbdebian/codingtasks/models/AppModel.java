@@ -1,5 +1,7 @@
 package com.mbdebian.codingtasks.models;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
 /**
@@ -13,6 +15,7 @@ import java.util.List;
  *
  *         This is the main application model (we won't need more for covering the requirements)
  */
+@Component
 public class AppModel {
 
     public List<String> sortAndAggregate(List<String> accessions) {
