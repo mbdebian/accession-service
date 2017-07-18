@@ -1,6 +1,7 @@
 package com.mbdebian.codingtasks.models;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
@@ -20,6 +21,7 @@ import static junit.framework.TestCase.assertTrue;
  *
  *         Unit tests, for main application model, this way we get enough coverage
  */
+@RunWith(Parameterized.class)
 public class AppModelTest {
 
     private AppModel appModel = new AppModel();
