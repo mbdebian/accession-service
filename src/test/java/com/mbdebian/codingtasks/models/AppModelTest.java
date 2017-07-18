@@ -27,6 +27,10 @@ public class AppModelTest {
         this.expectedOutput = expectedOutput;
     }
 
+    public void testSortAndAggregation() {
+        // TODO
+    }
+
     @Parameterized.Parameters
     public static Collection<Object[]> testCases() {
         return Arrays.asList(new Object[][]{
