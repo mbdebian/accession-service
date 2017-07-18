@@ -59,9 +59,10 @@ public class AppModel {
         }
 
         public void build(String accession) {
-            // TODO
-            // TODO is adjacent
-            // TODO collapse
+            if (!processAdjacency(accession)) {
+                // This accession is not adjacent, so collapse existing ones
+                collapseAdjacentAccessions(accession);
+            }
         }
 
         public List<String> getProduct() {
