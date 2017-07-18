@@ -25,7 +25,31 @@ public class AppModel {
         private List<String> product = new ArrayList<>();
 
         private boolean processAdjacency(String accession) {
-            // TODO
+            if (collapsing.isEmpty()) {
+                // Add accession for comparison with the next one
+                collapsing.add(accession);
+                return true;
+            }
+
+            // Otherwise, we already have at least a previous accession
+            String latestAccession = collapsing.get(collapsing.size() - 1);
+            if (latestAccession.equals(accession)) {
+                // Remove possible duplicates
+                return true;
+            }
+
+            // If we can compare latest and current side by side
+            if (latestAccession.length() == accession.length()) {
+                int i = 0;
+                while (latestAccession.charAt(i) == accession.charAt(i)) {
+                    i++;
+                }
+                // Add the accession if it's consecutive
+                if ((Integer.parseInt(accession.substring(i)) - Integer.parseInt(latestAccession.substring(i))) == 1) {
+                    collapsing.add(accession);
+                    return true;
+                }
+            }
             return false;
         }
 
