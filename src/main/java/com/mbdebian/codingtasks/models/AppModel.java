@@ -54,8 +54,12 @@ public class AppModel {
         }
 
         private String collapseAdjacentAccessions(String accession) {
+            // If there is only one accession in the collapsing list, we just add it to the product, if not, we need to
+            // collapse adjacent accessions
+            String accessionToAdd = collapsing.get(0);
             // TODO
-            return "";
+            // I'm not sure I will use this value for logging purposes...
+            return accessionToAdd;
         }
 
         public void build(String accession) {
