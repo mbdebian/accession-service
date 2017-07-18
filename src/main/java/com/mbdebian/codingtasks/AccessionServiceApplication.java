@@ -19,9 +19,13 @@ public class AccessionServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // Print result on the standard output
-        System.out.println(
-                String.join(",", appModel.sortAndAggregate(Arrays.asList(args[0].split(","))))
-        );
+        // Spring boot may be calling this when running tests, so limit its execution to those cases when we actually
+        // have arguments
+        if (args.length > 0) {
+            System.out.println(
+                    String.join(",", appModel.sortAndAggregate(Arrays.asList(args[0].split(","))))
+            );
+        }
     }
 
     public static void main(String[] args) {
