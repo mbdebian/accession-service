@@ -74,6 +74,13 @@ public class AppModel {
             return accessionToAdd;
         }
 
+        private void finalizeProduct() {
+            if (!collapsing.isEmpty()) {
+                // Flush pending accessions from the collapsing list
+                collapseAdjacentAccessions(null);
+            }
+        }
+
         public void build(String accession) {
             if (!processAdjacency(accession)) {
                 // This accession is not adjacent, so collapse existing ones
@@ -82,8 +89,8 @@ public class AppModel {
         }
 
         public List<String> getProduct() {
-            // TODO
             // We need to finalize the product, i.e. there may be pending accessions in the collapsing list
+            finalizeProduct();
             return product;
         }
     }
