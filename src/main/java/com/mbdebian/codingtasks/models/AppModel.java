@@ -83,6 +83,7 @@ public class AppModel {
 
         public List<String> getProduct() {
             // TODO
+            // We need to finalize the product, i.e. there may be pending accessions in the collapsing list
             return product;
         }
     }
