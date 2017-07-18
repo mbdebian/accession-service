@@ -26,7 +26,6 @@ public class RestApi {
 
     @RequestMapping("sortAccessions")
     public String sortAccessions(@RequestParam List<String> accessions) {
-        // TODO
-        return "";
+        return String.join(",", appModel.sortAndAggregate(accessions));
     }
 }
