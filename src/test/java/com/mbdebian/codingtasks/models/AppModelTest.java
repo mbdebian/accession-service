@@ -1,9 +1,13 @@
 package com.mbdebian.codingtasks.models;
 
+import org.junit.Test;
 import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
+
+import static junit.framework.TestCase.assertTrue;
 
 /**
  * @author Manuel Bernal Llinares
@@ -27,8 +31,15 @@ public class AppModelTest {
         this.expectedOutput = expectedOutput;
     }
 
+    @Test
     public void testSortAndAggregation() {
-        // TODO
+        List<String> input = Arrays.asList(givenInput.split(","));
+        List<String> output = appModel.sortAndAggregate(input);
+        String outputString = String.join(",", output);
+        assertTrue(String.format("Expected output '%s' matches calculated output '%s'",
+                expectedOutput,
+                outputString),
+                outputString.equals(expectedOutput));
     }
 
     @Parameterized.Parameters
